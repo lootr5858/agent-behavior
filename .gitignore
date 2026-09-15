@@ -1,0 +1,18 @@
+# Ignore everything unless explicitly allowed below.
+/*
+!/.gitignore
+!/README.md
+
+!/core/
+/core/*
+!/core/behavior-rules.md
+!/core/persona.md
+!/core/preferences.md
+!/core/routing.md
+
+!/governance/
+/governance/*
+!/governance/loading.md
+!/governance/mutation.md
+!/governance/handoff.md
+!/governance/rule-authoring-style.md
