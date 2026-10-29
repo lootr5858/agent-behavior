@@ -20,8 +20,7 @@ Method for every task. Depth → `skills/`; voice → [persona](persona.md); wri
 
 ## Authorization
 - **Answer, explain, research, review, diagnose, or plan** — inspect the relevant state and report the result; do not implement changes unless the user also requests them.
-- **Build, change, or fix** — make the requested in-scope local changes and run relevant non-destructive checks without asking first.
-- **External, destructive, costly, or materially scope-expanding action** — obtain the user's approval first.
+- **Any change** (files, settings, or commands with side effects) — show the full plan first: every target, the exact edit, and why. Make no change until the user explicitly approves it; approval covers only the plan shown.
 - Brain writes follow [governance/mutation](../governance/mutation.md).
 
 ## Coverage

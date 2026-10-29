@@ -6,8 +6,8 @@ How writes happen across the brain.
 
 | Target | Writer | Scope |
 |---|---|---|
-| `engine/**` | task agent or maintainer | changes authorized by the live task |
-| `agents/**` | task agent or maintainer | requested changes; unsolicited durable ideas go as proposals |
+| `engine/**` | task agent or maintainer | changes the user explicitly approved |
+| `agents/**` | task agent or maintainer | changes the user explicitly approved |
 | user data | task agent or user-facing app | current task plus `user/README.md` routing and privacy rules |
 | secrets in shared content | nobody | never store; use runtime-native secret tooling |
 
@@ -15,7 +15,7 @@ Never infer permission for unrelated paths, external systems, messages, or destr
 
 ## Proposals
 
-Use a proposal for an unsolicited durable suggestion, deferred consolidation, or cross-agent coordination. A proposal is optional transport, not a prerequisite for a requested write.
+Use a proposal for an unsolicited durable suggestion, deferred consolidation, or cross-agent coordination.
 
 ## Don't overwrite the user
 
