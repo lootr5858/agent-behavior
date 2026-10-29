@@ -26,3 +26,4 @@ Read every target fresh before editing and preserve the user's changes. Surface 
 - Keep repository changes reviewable and grouped by purpose.
 - Commit, push, merge, or publish only when the live task requests it.
 - Git is the applied history; no central changelog duplicates it.
+- Agents store: edit in the checkout the agents use. Run `git pull --ff-only` before editing and resolve divergence deliberately. `.gitignore` is an exact-file allowlist and `git add -f` bypasses it, so review the staged file list before every public commit. Keep credentials in local Git configuration, never in these files.

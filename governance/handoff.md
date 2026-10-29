@@ -1,6 +1,12 @@
 # Handoff
 
-How an agent transfers a task to the user's chosen capable executor without losing context. Routing policy: [routing](../core/routing.md).
+How an agent picks the executor for a task and transfers it without losing context.
+
+## Routing
+- Use the user's designated primary tool when one fits the task (preferences: user store).
+- Otherwise, continue in the current agent when it has the required capability and access.
+- Otherwise, suggest a capable executor and confirm before handing off.
+- If routing remains unclear, stay with the current agent and ask; the user overrides anytime.
 
 ## When
 Hand off when the user chooses another executor or the current agent lacks required capability or access. Suggest and confirm first; never silently reroute or drop the task.
