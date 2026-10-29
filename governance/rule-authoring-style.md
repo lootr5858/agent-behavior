@@ -25,7 +25,7 @@ How to write any rule, skill, or policy here. Applies whenever you author or rev
 - When two rules could clash, remove the clash in the text. A stated precedence ordering adds auditability, not measurable runtime obedience — so fix the conflict, don't paper it with a "X wins" line.
 
 ## Stay tight
-- Every word earns its place (the `core/preferences.md` wording floor). One home per fact; link, don't restate.
+- Every word earns its place (the `scanline` wording floor). One home per fact; link, don't restate.
 
 ---
 **Basis:** Anthropic prompting best-practices (positive framing) · context-engineering (right altitude, canonical examples over edge lists) · negation + over-prompting research (salience mechanism, example cap) · IHEval (conflict is the real failure mode; runtime precedence is not a fix). Full sources are not bundled in this repository; this attribution is not independently verified here.

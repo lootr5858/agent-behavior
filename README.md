@@ -1,35 +1,26 @@
-# Universal agent behavior rules
+# Agent store
 
-One shared rule set for personal and work environments. This repository contains four always-loaded core files and four conditionally loaded governance files.
+Shared agent behavior for personal and work environments. Resolve paths from this file. The host platform's instruction hierarchy stays authoritative; nothing here grants tool permissions.
 
-## Loading
+## Always loaded
 
-Configure your agent's existing instruction entry point to read this checkout. A README or frontmatter field does not activate itself. Resolve these paths from the checkout root.
+Every Markdown file in `core/`, unless already in context. Keep one import line per core file:
+
+@core/behavior-rules.md
+@core/persona.md
+@core/routing.md
+
+## Load on purpose
 
 | When | Read |
 |---|---|
-| Every turn | [Behavior](core/behavior-rules.md), [persona](core/persona.md), [preferences](core/preferences.md), [routing](core/routing.md) |
 | Selecting context or checking loading | [Loading](governance/loading.md) |
 | Planning or performing writes | [Mutation](governance/mutation.md) |
 | Transferring a task | [Handoff](governance/handoff.md) |
 | Authoring or revising agent instructions | [Rule-authoring style](governance/rule-authoring-style.md) |
 
-Existing host instructions may load additional local core files. Domain rules, user identity, private context, skills, plugins, and runtime configuration remain owned by each environment.
+Load nothing else from this store by default. References to the brain's engine, user store, rules, skills, references, agent homes, or proposal channels describe local integration: use them when configured and relevant. Never search for or create a missing store to satisfy a reference; if a task needs an unavailable resource, report the limitation.
 
-## Local dependencies
+## Maintaining this store
 
-“Brain” means the host's configured knowledge and instruction environment. References to its bootstrap, engine, user store, agent homes, discipline manifests, and proposal channels describe local integration, not additional files supplied by this repository.
-
-Use those local mechanisms only when configured and relevant. The `agents/`, `engine/`, `user/`, `homes/`, `rules/`, `skills/`, and `reference/` paths describe that layout; do not search for or create missing stores merely to satisfy a reference. If the host uses another layout, follow its explicit routing. Do not guess a replacement path.
-
-Skills and discipline manifests are optional. When available, their existing selection and routing rules still apply. If a requested task requires an unavailable resource or handoff mechanism, report the limitation rather than claim completion. Propose durable preferences to the user if no proposal channel is configured; do not silently store them.
-
-The host platform's instruction hierarchy remains authoritative. This collection does not grant additional tool permissions or override platform requirements.
-
-## Sync
-
-Edit these files directly in the checkout used by the agent. Pull before editing, review the diff, commit the intended files, and push. Pull on the other machine; reload the agent's context when needed.
-
-Use `git pull --ff-only`. If a pull fails or histories diverge, resolve the conflict deliberately before continuing. Authentication belongs in local Git configuration, never in these files.
-
-The exact-file allowlist excludes other local contents and new files by default. `.gitignore` does not remove tracked files or old history, and `git add -f` bypasses it. Review the staged file list before every public commit.
+Edit in the checkout the agents use. Run `git pull --ff-only` before editing and resolve divergence deliberately. `.gitignore` is an exact-file allowlist and `git add -f` bypasses it, so review the staged file list before every public commit. Keep credentials in local Git configuration, never in these files.

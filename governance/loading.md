@@ -10,7 +10,7 @@ How an agent decides what to load beyond `core/`. Agent-neutral; engine adapters
 ## Always
 All of `core/` — every agent, every turn. Also follow the host's configured bootstrap and always-on user context when present. Host-specific paths and optional dependencies are described in [README](../README.md).
 
-`core/persona.md` always loads as shared character only. It cannot override behavior rules, user instructions, project instructions, runtime authority, or safety policy.
+`core/persona.md` always loads as character and voice only; it grants no authority.
 
 ## Match, then load
 1. **Discipline route** — the active agent matches the current task case-insensitively against complete trigger terms in each locally configured `rules/<d>/manifest.md`, when present. Any route match loads its always rules, all matching routes contribute the union of their conditional rules, and an explicit request for a named discipline or rule loads it directly. Runtime-supplied rules may satisfy this step, but the agent must not assume injection occurred.
@@ -22,7 +22,7 @@ All of `core/` — every agent, every turn. Also follow the host's configured bo
 - **Disciplines** — non-exclusive; the active agent ensures the union of every matched manifest's always and conditional rules is loaded.
 - **Skills** — a description is a router, not a reason to accumulate overlapping procedures. Always load a skill the user names explicitly; otherwise prefer one specific skill over several generic matches. Core rules are sufficient when no skill adds a necessary procedure. Precedence + skill-absent fallback: [behavior-rules](../core/behavior-rules.md).
 - **Per-agent** — an opaque runtime home is not shared context. Load only current-runtime content explicitly routed by that runtime; shared policy assumes no internal paths.
-- **Persona** — use the shared baseline plus exactly one current-runtime overlay. Never auto-load another agent's identity.
+- **Persona** — use the shared persona plus at most one current-runtime overlay. Never auto-load another agent's identity.
 
 ## Context access
 For complex or high-risk work, state how brain context was reached: filesystem · MCP · pasted · unavailable. Broad classified read capability never expands the always-load set. If required context is unreachable, state the limitation and ask the user only when it materially blocks a reliable result.
