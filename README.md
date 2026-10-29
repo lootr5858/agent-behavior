@@ -1,14 +1,20 @@
+---
+session:
+  - core/*.md
+  - skills/minimum-work/SKILL.md
+  - skills/scanline/SKILL.md
+subagent:
+  - skills/minimum-work/SKILL.md
+  - skills/scanline/SKILL.md
+---
+
 # Agent store
 
 Shared agent behavior for personal and work environments. Resolve paths from this file. The host platform's instruction hierarchy stays authoritative; nothing here grants tool permissions.
 
 ## Always loaded
 
-Every Markdown file in `core/`, unless already in context. Keep one import line per core file:
-
-@core/behavior-rules.md
-@core/persona.md
-@core/routing.md
+This file's frontmatter is the manifest (stripped from injected copies). Each session gets this README, the `session` files, and the user store's README; each subagent gets the `subagent` files. The engine's `brain-context` hook injects them. If they are not in context, read them. Patterns are globs relative to this file, so a new file under a listed pattern loads with no other change.
 
 ## Load on purpose
 
@@ -19,7 +25,7 @@ Every Markdown file in `core/`, unless already in context. Keep one import line 
 | Transferring a task | [Handoff](governance/handoff.md) |
 | Authoring or revising agent instructions | [Rule-authoring style](governance/rule-authoring-style.md) |
 
-Load nothing else from this store by default. References to the brain's engine, user store, rules, skills, references, agent homes, or proposal channels describe local integration: use them when configured and relevant. Never search for or create a missing store to satisfy a reference; if a task needs an unavailable resource, report the limitation.
+Load nothing else from this store by default. References to the brain's engine, user store, skills, or plugins describe local integration: use them when configured and relevant. If a task needs an unavailable resource, report the limitation; never search for or create a missing store.
 
 ## Maintaining this store
 

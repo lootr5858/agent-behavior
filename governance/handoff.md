@@ -1,8 +1,3 @@
----
-tier: governance
-load: on-relevance
----
-
 # Handoff
 
 How an agent transfers a task to the user's chosen capable executor without losing context. Routing policy: [routing](../core/routing.md).
@@ -27,12 +22,9 @@ Hand off when the user chooses another executor or the current agent lacks requi
 ## relevant files / paths
 ## constraints    — including planning-only = no changes; never print secret values
 ## definition of done
-## brain tiers to load   — configured host bootstrap, if present + core/* + relevant governance and local rules
-## the handoff task  — read tiers, restate understanding, lay out the plan, then STOP
+## brain context to load — the agents and user README entry points + relevant governance
+## the handoff task  — read the listed context, restate understanding, lay out the plan, then STOP
 ~~~
 
 ## Resume
-Resume the explicitly identified session, never an ambiguous "most recent" session. Concrete commands, identifiers, budgets, and transport belong to the target runtime's engine adapter.
-
-## Why resumable
-A resumable handoff preserves decisions and a pre-loaded plan without copy-paste or hunting.
+Resume the explicitly identified session, never an ambiguous "most recent" session.

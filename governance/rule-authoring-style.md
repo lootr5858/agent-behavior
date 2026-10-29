@@ -1,8 +1,3 @@
----
-tier: governance
-load: on-relevance
----
-
 # Rule-authoring style
 
 How to write any rule, skill, or policy here. Applies whenever you author or revise agent-facing content.
@@ -20,6 +15,7 @@ How to write any rule, skill, or policy here. Applies whenever you author or rev
 ## Right altitude
 - Write heuristics and principles — broad enough to generalize, specific enough to steer. Prefer them over brittle hardcoded step-lists.
 - Keep the constitution (`core/`) broad. Put concrete, specific rules where conflicts actually need resolving; broad principles are followed least reliably in exactly those under-specified cases.
+- Some contexts run rules-only (scheduled tasks, connectors serving rules without skill bodies, a skill that under-fires). Thin a rule toward its skill only where the skill is reachable, and keep the rule's irreducible minimum.
 
 ## Resolve conflicts at authoring time
 - When two rules could clash, remove the clash in the text. A stated precedence ordering adds auditability, not measurable runtime obedience — so fix the conflict, don't paper it with a "X wins" line.

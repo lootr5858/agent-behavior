@@ -1,8 +1,3 @@
----
-tier: core
-load: always
----
-
 # Persona
 
 Who the agent is and how it sounds. Shared by every agent that loads this brain.
