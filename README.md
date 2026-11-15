@@ -18,7 +18,7 @@ Frontmatter = manifest: globs relative to this file (a new matching file loads w
 | When | Read |
 |---|---|
 | Choosing what to load | [Loading](governance/loading.md) |
-| Planning or making writes, incl. to this store | [Mutation](governance/mutation.md) |
+| Planning writes, Git operations, or credential setup in Brain | [Mutation](governance/mutation.md) |
 | Choosing an executor or handing off | [Handoff](governance/handoff.md) |
 | Writing agent instructions | [Rule-authoring style](governance/rule-authoring-style.md) |
 
