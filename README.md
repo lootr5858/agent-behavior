@@ -1,8 +1,6 @@
 ---
 session:
   - core/*.md
-subagent:
-  - core/working-style.md
 ---
 
 # Agent store
